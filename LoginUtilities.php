@@ -10,7 +10,7 @@ class LoginFunctions extends Connection{
     }
 
     function SelectQuery($username){
-        $q = "SELECT * FROM users WHERE username = '$username';";
+        $q = "SELECT * FROM logins WHERE username = '$username';";
         $this->result = pg_query($this->dbconnection,$q);
     }
 
