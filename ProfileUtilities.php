@@ -99,12 +99,12 @@ class ProfileFunctions extends Connection{
         $trimmedaddress2 = trim($address2);
 
         if(substr_count($trimmedaddress2,"\t") > 0){$error_message = "Cannot have tabs to seperate names!";}
-        elseif(substr_count($trimmedaddress2," ") == 0){$error_message = "Cannot have only one word in address2! Must designate unit abbreviation and unit number/name";}
+        elseif(substr_count($trimmedaddress2," ") == 0){$error_message = "Must designate both unit abbreviation and unit number/name!";}
         elseif(substr_count($trimmedaddress2," ") > 1){$error_message = "There cannot be more than one space to seperate your address2! Ex. APT 3125, bldg. 5423, dept ABC";}
 
         if(!$error_message){
             $address_array = explode(" ",$trimmedaddress2);
-            if(!in_array($address_array[0],$acceptable_abbreviations)){$error_message = "Only accepting abbreviates such as apt, bldg, dept, fl, ste, unit, dept, rm";}
+            if(!in_array($address_array[0],$acceptable_abbreviations)){$error_message = "Only accepting abbreviates such as apt, bldg, fl, ste, unit, dept, rm";}
         }
 
         return $error_message;
@@ -160,6 +160,13 @@ class ProfileFunctions extends Connection{
                     echo "<a class='active' href='profile_management.php'>Profile</a>";
                     echo "<a class='active' href='quote_history.php'>Quote History</a>";
                     echo "<a class='active' href='fuel_form.php'>Quote Form</a>";
+                    echo "<a class='active' href='login.php'>Logout</a>";
+                echo "</div>" ;
+		    echo "</div class='links_indiv'>";
+        }
+        else{
+            echo "<div class='links_display'>";
+                echo "<div class='topnav'>";
                     echo "<a class='active' href='login.php'>Logout</a>";
                 echo "</div>" ;
 		    echo "</div class='links_indiv'>";

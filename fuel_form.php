@@ -86,7 +86,7 @@
 			<!-- create required email field -->
 			<div class="input-group">
 				<label><b><u>Gallons Requested*:</u></b></label>
-                <input type="number" min="1" max="1000000000" placeholder="0" name="gals" value="<?php echo isset($_POST['gals']) ? $_POST['gals'] : '' ?>"  required />
+                <input type="number" min="1" max="100000000000" placeholder="0" name="gals" value="<?php echo isset($_POST['gals']) ? $_POST['gals'] : '' ?>"  required />
                 <div class="error-message">
                     <?php echo $email_error; ?>
                 </div>

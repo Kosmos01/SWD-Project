@@ -27,7 +27,7 @@ class RegisterFunctions extends Connection{
 
         if(pg_num_rows($this->result) >= 1){$error_string = "username is already registered!"; }
         elseif(preg_match('/\s/',$username)){$error_string = "No whitespaces allowed in username!";}
-        elseif(preg_match('/[^a-zA-Z0-9\d_]/', $username)){ $error_string = "No special characters in username!"; }
+        elseif(preg_match('/[^a-zA-Z0-9\d_-]/', $username)){ $error_string = "No special characters in username!"; }
         
         return $error_string;
     }

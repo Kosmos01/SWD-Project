@@ -51,7 +51,7 @@ class QuoteFunctions extends Connection{
     function ValidDate($date){
         date_default_timezone_set('America/Chicago');
         $error_message = "";
-        if(strtotime($date) < strtotime(date("m/d/Y"))) { $error_message = "Deliver date cannot be set before today's date!";}
+        if(strtotime($date) < strtotime(date("m/d/Y"))) { $error_message = "Delivery date cannot be set before today's date!";}
         else{$this->delivery_date = date("m/d/Y",strtotime($date));} 
 
         return $error_message;
@@ -69,9 +69,15 @@ class QuoteFunctions extends Connection{
     }
 
     function PrintAddress(){
-        
-        echo $this->address_array[0] . " " . $this->address_array[1] . ", ";
-        echo $this->address_array[2] . ", " . $this->address_array[3] . " " .  $this->address_array[4];
+
+        if(!$this->address_array[1]){
+            echo $this->address_array[0] . ", ";
+            echo $this->address_array[2] . ", " . $this->address_array[3] . " " .  $this->address_array[4];
+        }
+        else{
+            echo $this->address_array[0] . " " . $this->address_array[1] . ", ";
+            echo $this->address_array[2] . ", " . $this->address_array[3] . " " .  $this->address_array[4];
+        }
     }
 
     function PullQuotes($username){

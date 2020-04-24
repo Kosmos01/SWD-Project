@@ -67,7 +67,7 @@
 		<form method="POST" action="register.php">
 			<!-- create required email field -->
 			<div class="input-group">
-				<label>Username (max 25 chars)</label>
+				<label>Username</label>
                 <input type="text" name="username" maxlength="25" required />
                 <div class="error-message">
                     <?php echo $_SESSION['username-error']; ?>
@@ -75,7 +75,7 @@
 			</div>
 			<!--  creat required password fields -->
 			<div class="input-group">
-				<label>Password (max 20 chars)</label>
+				<label>Password</label>
                 <input type="password" name="password_1" maxlength="20" required />
                 <div class="error-message">
                     <?php echo $_SESSION['password-error']; ?>
@@ -83,7 +83,7 @@
 			</div>
 			<!-- create password confirmation field -->
 			<div class="input-group">
-				<label>Confirm Password (max 20 chars)</label>
+				<label>Confirm Password</label>
 				<input type="password" name="password_2" maxlength="20" required />
 			</div>
 			<div class="input-group">
